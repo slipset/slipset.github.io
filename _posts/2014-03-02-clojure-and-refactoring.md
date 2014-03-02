@@ -103,15 +103,15 @@ I've only coded Clojure for a bit over a month, only written close to
 
    Classic Java
    {% highlight Java %}
-      if (number % 2 == 0) {
+   if (number % 2 == 0) {
         evens.add(number);
-	} else {
+   } else {
 	odds.add(number);
-      }
+   }
    {% endhighlight %}
 
    Clojure
-   {% hightlight Clojure %}
+   {% highlight Clojure %}
    (group-by odd? (range 10))
    {% endhighlight %}
 
