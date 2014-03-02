@@ -15,15 +15,15 @@ html, body { height: 100%; }
 body {
   background-color: #FFF;
   font: 13.34px Helvetica, Arial, sans-serif;
-  font-size: small;
-  text-align: center;
+  /*font-size: small;
+  text-align: center */;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%; }
 
-h1 { margin-bottom: 1em; }
-p { margin: 1em 0; }
+h1 { margin-bottom: 0.2em; }
+p { margin: 0.2em 0 2em 0;  }
 
 a         { color: #00a; }
 a:hover   { color: #000; }
@@ -56,11 +56,11 @@ a:visited { color: #a0a; }
 /*****************************************************************************/
 
 .site {
-  font-size: 115%;
-  text-align: justify;
-  width: 42em;
-  margin: 3em auto 2em;
-  line-height: 1.5em;
+  /*font-size: 115%;
+  text-align: justify;*/
+  width: 43.5em;
+  margin: 3em 5em 2em;
+  /*line-height: 1.5em;*/
 }
 
 .header a {
@@ -157,4 +157,13 @@ a:visited { color: #a0a; }
 
 .post pre.terminal code {
   background-color: #333;
+}
+
+blockquote {
+    border-left: 2px solid #000000;
+    font-style: italic;
+    margin: 0.25em 0;
+    padding: 0.25em 20px;
+    position: relative;
+    color: #383838;
 }
