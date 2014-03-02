@@ -1,4 +1,4 @@
-a---
+---
 layout: post
 title: "Clojure and refactoring"
 categories: Clojure
@@ -23,8 +23,7 @@ So I thought I'd share some (deeper) thoughts on this.
 I've only coded Clojure for a bit over a month, only written close to
 1000 lines of code, and I'm the only person working on this project.
 
-## What kind of refactorings and other tools do I use when working in
-   Java?
+## What kind of refactorings and other tools do I use when working in Java?
    Previously, I've had the opinion that working in a language which has
    less IDE support than Java would be a no-starter, and I still
    cannot imagine coding in Java without refactoring and
@@ -39,7 +38,7 @@ I've only coded Clojure for a bit over a month, only written close to
    I'm not sure why I don't miss these things in Clojure, but I do
    notice a couple of things:
 
-   ### Working in the repl
+### Working in the repl
    Since all my development happens in the REPL, I have a workflow
    which consists of
    0. Make stuff work
@@ -49,7 +48,7 @@ I've only coded Clojure for a bit over a month, only written close to
    This leads to code that is much more worked through than the stuff
    you bang out in Java
 
-   ### Working with higher abstractions
+### Working with higher abstractions
    Since Clojure lets you work with higher-order functions and has the
    great sequence abstraction, you never end up with code lik this:
    {% highlight Java %}
@@ -79,7 +78,7 @@ I've only coded Clojure for a bit over a month, only written close to
    some more stuff ;) so the refactor is done so fast I don't even
    have time to miss a refactoring tool.
 
-   ### Dense code
+### Dense code
    It has also dawned upon me that since Clojure is so dense, eg lots
    of stuff happening in few lines of code, I really need to be
    prudent when organizing my code. If I let a function become longer
@@ -89,7 +88,7 @@ I've only coded Clojure for a bit over a month, only written close to
    Also, files with more than 150 lines of code makes my head explode,
    so I constantly move stuff into other packages.
 
-   ### But isn't this what refactoring tools help you with?
+### But isn't this what refactoring tools help you with?
    No, not the way I look at refactoring. Because refactoring for me
    is taking something that is functionally finished, even deployed,
    and reorganizing it mechanically. The stuff I mention above is stuff
@@ -97,7 +96,7 @@ I've only coded Clojure for a bit over a month, only written close to
    REPL, I constantly refactor stuff before it even has a chance to become a big hairy
    ball of mud.
    
-   ### All the helpers are written
+### All the helpers are written
    Also I find that extracting stuff to smaller helper
    functions/classes like I do in Java is no longer needed since these
    methods seem to be already implemented in Clojure.
@@ -119,7 +118,7 @@ I've only coded Clojure for a bit over a month, only written close to
    In Java, I'd probably extract <tt>isOdd(int i)</tt> whereas in
    Clojure, that's already done.
 
-   ### Functional code leeds to less intertwinedness
+### Functional code leeds to less intertwinedness
    It seems like when banging out some Java-code, even if you take
    care, way too many functions seem to know about far too much common
    stuff - normally you'd have three methods operating on the same
@@ -127,7 +126,7 @@ I've only coded Clojure for a bit over a month, only written close to
 
    In Clojure you simply don't.
    
-   ##Summary
+## Summary
    So I guess that the combination of the REPL, the sequence
    abstraction, dense code, and my stupidity leeds me to writing code
    that doesn't need too much after-the-fact refactoring.
