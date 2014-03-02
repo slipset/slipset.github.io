@@ -6,16 +6,15 @@ categories: Clojure
 
 Last night I tweeted
 <blockquote class="twitter-tweet" lang="en"><p>Seems to me that refactoring-tools are much less needed when programming <a href="https://twitter.com/search?q=%23clojure&amp;src=hash">#clojure</a></p>&mdash; Erik Assum (@slipset) <a href="https://twitter.com/slipset/statuses/439710783191416832">March 1, 2014</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 to which I got a couple of responses.
 
 First from [@mikera](https://twitter.com/mikera) which contained a link to a really nice post he'd written outlining some good points about Java vs Clojure:
 <blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/slipset">@slipset</a> I&#39;ve found the opposite - lack of refactoring support is one of my (very few) gripes about <a href="https://twitter.com/search?q=%23Clojure&amp;src=hash">#Clojure</a>. see: <a href="http://t.co/oqRYCrdkU0">http://t.co/oqRYCrdkU0</a></p>&mdash; Mike (@mikera) <a href="https://twitter.com/mikera/statuses/439973631645319168">March 2, 2014</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 Then [@odinodin](https://twitter.com/@odinodin) tweeted
 <blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/slipset">@slipset</a> why isn’t there the same need for refactoring support? Just curious about what you’re thinking about</p>&mdash; Odin Hole Standal (@odinodin) <a href="https://twitter.com/odinodin/statuses/440065048971857920">March 2, 2014</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 So I thought I'd share some (deeper) thoughts on this.
 
@@ -53,7 +52,7 @@ you bang out in Java
 ### Working with higher abstractions
 Since Clojure lets you work with higher-order functions and has the
 great sequence abstraction, you never end up with code lik this:
-{% highlight Java %}
+{% highlight java %}
 foreach (Foo f: foos) {
     if (foo.getBaz() != null && foo.getOmg() != HAPPENING) {
         bars.add(foo);
@@ -62,7 +61,7 @@ foreach (Foo f: foos) {
 return bars;
 {% endhighlight %}
 Which I probably would refactor into something like:
-{% highlight Java %}
+{% highlight java %}
 foreach (Foo f: foos) {
    if (!foo.isBar()) continue;
    bars.add(foo);
@@ -72,7 +71,7 @@ return bars;
 Which includes extract method.
 
 In Clojure this is
-{% highlight Clojure %}
+{% highlight clojure %}
 (filter #(and (:baz %) (= (:omg %) :happening)) foos)
 {% endhighlight %}
 
@@ -104,7 +103,7 @@ functions/classes like I do in Java is no longer needed since these
 methods seem to be already implemented in Clojure.
 
 Classic Java
-{% highlight Java %}
+{% highlight java %}
 if (number % 2 == 0) {
      evens.add(number);
 } else {
@@ -112,7 +111,7 @@ if (number % 2 == 0) {
 }
 {% endhighlight %}
 
-Clojure
+clojure
 {% highlight Clojure %}
 (group-by odd? (range 10))
 {% endhighlight %}
