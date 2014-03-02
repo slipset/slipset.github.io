@@ -109,7 +109,7 @@ I've only coded Clojure for a bit over a month, only written close to
 	} else {
 	odds.add(number);
       }
-   {% endhightlight %}
+   {% endhighlight %}
 
    Clojure
    {% hightlight Clojure %}
