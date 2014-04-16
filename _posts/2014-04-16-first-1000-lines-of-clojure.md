@@ -74,7 +74,7 @@ use <tt>update-in</tt>
 ##The hard bits
 The hardest bit in this project was due to the fact that the XML was
 actually a dump of a
-[javax.swing.DefaultMutableTreeNode](http://docs.oracle.com/javase/6/docs/api/javax/swing/tree/DefaultMutableTreeNode.html). This
+[javax.swing.DefaultMutableTreeNode](http://docs.oracle.com/javase/6/docs/api/javax/swing/tree/DefaultMutableTreeNode.html). This 
 meant that to start the transformation of this XML, I needed to use
 the java-beans that were serialized. This meant that in order to test
 my functions, I first had to get hold of the Java-objects, which could
