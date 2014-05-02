@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Thoughts on getting CLojure into the enterprise"
+title: "Thoughts on getting Clojure into the enterprise"
 categories: Clojure
 ---
 
