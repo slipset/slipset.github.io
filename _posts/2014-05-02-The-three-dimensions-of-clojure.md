@@ -12,7 +12,7 @@ It is such a pleasure working in a language which lets you do suff like:
 (distinct (map :foo bars))
 {% endhighlight %}
 It's just like little pieces of functionality waiting to be put together. 
-Like Lego
+Like Lego.
 
 #The higher order
 This is where I'm at right now. I've just started to realize what powers lie in <code>comp</code> and <code>partial</code>.
