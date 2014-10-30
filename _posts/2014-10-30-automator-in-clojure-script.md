@@ -8,7 +8,10 @@ I don't quite remember how I found the post, but anyways I landed upon
 blog by [@mbcrump](http://www.twitter.com/mbcrump) about how automator
 now supports Javascript as a language. I don't even remember how I got
 the idea of playing with clojurescript to get it to automate tasks,
-but definitively read it somewhere.
+but definitively read it somewhere. Update: Now I was reminded:
+[@borkdude](http://www.twitter.com/borkdude) retweeted
+<blockquote class="twitter-tweet" lang="en"><p>(let [mail (new js/Application &quot;com.apple.mail&quot;)&#10;inbox (.. mail -inbox -messages)&#10;first-message (aget inbox 0)](.subject first-message)) 2/2</p>&mdash; Daniel Szmulewicz (@danielszmu) <a href="https://twitter.com/danielszmu/status/527589833472892928">October 29, 2014</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 So how did I go about this?
 
