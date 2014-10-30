@@ -113,7 +113,7 @@ applescript.core.msg = applescript.core.mail.OutgoingMessage({visible:!0, conten
 applescript.core.mail.outgoingMessages.push(applescript.core.msg);
 applescript.core.mail.activate();
 
-{% endhighlight }
+{% endhighlight %}
 Which translates pretty nicely to the original js-code.
 
 
