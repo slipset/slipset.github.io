@@ -14,7 +14,7 @@ So how did I go about this?
 
 # Starting a new Clojurescript project
 This is always a pain, since I hardly ever do it. I took a chance on
-[David Nolens ](http://www.twitter.com/swanodette)s mies plugin for
+[David Nolens](http://www.twitter.com/swanodette) mies plugin for
 leinigen
 {% highlight bash %}
 $ lein new mies applescript
@@ -58,6 +58,7 @@ it was quite easy to translate it to clojurescript
 (.push (aget mail "outgoingMessages") msg)
 (.activate mail)
 {% endhighlight %}
+
 
 {% highlight bash %}
 $ lein cljsbuild once
