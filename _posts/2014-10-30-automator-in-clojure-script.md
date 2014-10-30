@@ -41,7 +41,7 @@ Mail.outgoingMessages.push(msg);
 Mail.activate();
 {% endhighlight %}
 it was quite easy to translate it to clojurescript
-{% hightlight clojure %}
+{% highlight clojure %}
 (ns applescript.core)
 
 (def mail (js/Application "Mail"))
@@ -57,7 +57,7 @@ it was quite easy to translate it to clojurescript
 ;; mail.outgoingMessages.push(msg)
 (.push (aget mail "outgoingMessages") msg)
 (.activate mail)
-{% hightlight %}
+{% endhighlight %}
 
 {% highlight bash %}
 $ lein cljsbuild once
