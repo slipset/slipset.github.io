@@ -9,8 +9,9 @@ a commandline bootstrapped ClojureScript REPL for OS X based on
 JavaScriptCore.
 
 There are two reasons for this, one, I'm trying to write as much
-Clojure(Script) as possible, and two, it's fun to contribute to some
-opensource projects.
+Clojure(Script) as possible and one way to do that is to try to
+automate as much as possible using Clojure(Script), and two, it's fun
+to contribute to some opensource projects.
 
 Planck consists, as far as I can tell, of a wee bit of Clojurescript
 and quite a bit of Objective C which lets you augment JavasScriptCore
@@ -79,10 +80,11 @@ OSX. [Mike Fikes](https://www.twitter.com/mfikes), the creator of
 Planck, apparantly has a host of macs running different versions of OS
 X. And while testing an early version of my patch, he found that the
 way I was formatting dates to ship over to Clojurescript didn't work
-on OSX Lion, since my format-string `yyyy-mm-dd'T'hh:mm:ssZZZZZ`
-which returns `"2013-08-25T00:16:27.000-00:00"` on El Capitan, returns
-`"2015-08-31T15:39:19GMT-04:00"` on Lion, which causes `js/Date.` to
-throw its hands in the air and give up.
+on OSX Lion, since my format-string `yyyy-mm-dd'T'hh:mm:ssZZZZZ` which
+returns `"2013-08-25T00:16:27.000-00:00"` on El Capitan, returns
+`"2015-08-31T15:39:19GMT-04:00"`, the interesting bit being the added
+'`GMT`', on Lion, which causes `js/Date.` to throw its hands in the
+air and give up.
 
 So how do you write tests for this? I have no clue. My approach is to
 try and visually inspect the results until they're good. I guess you
