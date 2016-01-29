@@ -1,3 +1,9 @@
+---
+layout: post
+title: Planck and writing tests
+categories: Clojurescript, Planck
+---
+
 Lately I've been playing around with [Planck](http://planck-repl.org),
 a commandline bootstrapped ClojureScript REPL for OS X based on
 JavaScriptCore.
