@@ -23,7 +23,7 @@ you would with shell-scripts. But it was lacking the basic stuff to
 query files, so I figured that was a nice little project, to add a
 `fstat` like function to `planck.io`. Which, conceptually is quite
 easy, you run some `stat` like function in the Objective C part of the
-code, then expose that through a funciton in `planck.io`.
+code, then expose that through a function in `planck.io`.
 
 ##Here be dragons!
 
