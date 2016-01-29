@@ -35,7 +35,7 @@ present.
 do the job, but doesn't. Probably because of some equals semantic, so
 you end up having to use `[NSDictionary objectForKey]`. Which has a
 really subtle thing about it. You see, when doing
-{% highlight objective c %}
+{% highlight objective-c %}
 if ([result objectForKey:NSFileAppendOnly] != nil) {
    bool appendOnly = [ result objectForKey:NSFileAppendOnly ];
    JSObjectSetProperty(ctx, retval, JSStringCreateWithUTF8CString("appendonly"),
