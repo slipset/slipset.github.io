@@ -13,5 +13,7 @@ So, today I had my first day at [Telenor Digital](https://www.telenordigital.com
 2) The tooling. The app I'll be working on is a web app. Running it straight from `lein repl`, the log-statements are printed to stdout and all is well. But when I run it from inside [Cider](https://github.com/clojure-emacs/cider) the log-statements disappear. 
 I wonder why. I guess this would be off-putting for people a bit sceptic to Clojure, but I guess I'll just have to ask in the #cider channel on Clojurians tomorrow.
 
+Update: Turns out, after some googling that running the repl in a terminal and connecting via `M-x cider-connect` was the way to go.
+Only downside is that Ciders new 'I'll insert correct middleware for you' feature doesn't work when connecting to a network repl, as explained [here](http://cider.readthedocs.io/en/latest/installation/). You also want to add `clj-refactor`-middleware as explained [here](https://github.com/clojure-emacs/clj-refactor.el)
 
 
