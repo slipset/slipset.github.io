@@ -37,3 +37,26 @@ the handler as such:
 ```
 
 and the changes will be picked up when `bar` is redefined.
+
+# The Good stuff
+Since I'm new to to the code base and not quite sure how everything works, it seemed prudent to add some tests to make sure my 
+refactorings were working the way I wanted them to. So I wanted to, in Java parlance, mock out the database and make sure that 
+the tranformations I did to the data from the db were correct. In Java-land, this would have been a day of pain, but due to 
+Clojures map/list literals and `with-redefs` it's all quite simple:
+
+```clojure
+;; First pull your stuff from the db
+(db-fn foo bar baz)
+;=> ({:foo "bar" :baz "qix})
+;; then define a var to hold this in your test-ns
+(def from-db ({:foo "bar" :baz "qix"}))
+;; Then run your function before the refactor
+(to-be refactored "whatever" "whatnot")
+;;=> 42
+;; Write the test
+(deftest my-function-test
+   (testing "that it works"
+      (with-redefs [db-fn (fn [_ _ _] from-db)
+         (is (= 42 (to-be-refactored "whatever" "whatnot"))))))
+```
+
