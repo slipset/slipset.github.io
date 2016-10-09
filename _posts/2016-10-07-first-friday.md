@@ -28,8 +28,8 @@ One such thing today was solved by the var-quote `#'`. I was rewriting some auth
 {% endhighlight %}
 Problem is, that if you redifine the handler function, in this case `bar`, the changes are not visible. The solution here is to var-quote
 the handler as such:
-{% highlight clojure %}
+```clojure
 (def rules [{:uri "/foo"
              :handler #'bar}])
-{% endhighlight %}
+```
 and the changes will be picked up when `bar` is redefined.
