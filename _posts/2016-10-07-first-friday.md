@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "First fridayr"
+title:  "First friday"
 date:   2016-10-07 21:00:00
 categories: Fulltime Clojure
 ---
