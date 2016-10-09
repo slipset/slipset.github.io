@@ -19,17 +19,17 @@ pissed off when I waste a couple of hours on something that I shouldn't have was
 
 One such thing today was solved by the var-quote `#'`. I was rewriting some authorization code which uses 
 [buddy](https://funcool.github.io/buddy-auth/latest/#access-rules) which ended up in code like
-```clojure
+{% highlight clojure %}
 (def rules [{:uri "/foo"
              :handler bar}])
              
 (-> app
     (buddy/wrap-access-rules rules))
-```
+{% endhighlight %}
 Problem is, that if you redifine the handler function, in this case `bar`, the changes are not visible. The solution here is to var-quote
 the handler as such:
-```clojure
+{% highlight clojure %}
 (def rules [{:uri "/foo"
              :handler #'bar}])
-```
+{% endhighlight %}
 and the changes will be picked up when `bar` is redefined.
