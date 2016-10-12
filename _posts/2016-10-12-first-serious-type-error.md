@@ -37,7 +37,7 @@ Consider this function (slightly useless, but suits my example):
 
 ```clojure
 (defn foo 
-"bars is a vector of strings
+"bars is a vector of strings"
 [bars]
   (first bars))
 ```
