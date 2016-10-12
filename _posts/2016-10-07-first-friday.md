@@ -51,7 +51,7 @@ Clojures map/list literals and `with-redefs` it's all quite simple:
 ;; then define a var to hold this in your test-ns
 (def from-db ({:foo "bar" :baz "qix"}))
 ;; Then run your function before the refactor
-(to-be refactored "whatever" "whatnot")
+(to-be-refactored "whatever" "whatnot")
 ;;=> 42
 ;; Write the test
 (deftest my-function-test
