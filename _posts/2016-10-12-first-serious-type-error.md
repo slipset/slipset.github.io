@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "First serious type-rror"
+title:  "First serious type-error"
 date:   2016-10-12 21:00:00
 categories: Fulltime Clojure
 ---
