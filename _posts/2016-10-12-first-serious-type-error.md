@@ -23,7 +23,7 @@ foo();
 ```
 
 The equivalent code in Clojure:
-```Clojure
+```clojure
 (defn foo []
    bar)
 ```
