@@ -14,7 +14,7 @@ But I've been wanting to do something else for quite a while. I'm a [mender](htt
 so greenfield work is not so attractive to me. I need some scaffolding to be present for me to work, and I really like hunting bugs and
 rewriting old code. So how can I relate this to our Fun Fridays?
 
-Well I can contribute to OSS. 
+Well, I can contribute to OSS. 
 
 And that's just what happened yesterday. 
 
