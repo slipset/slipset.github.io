@@ -125,6 +125,6 @@ Of course, I'm only complaining and have no real solution to this problem, but I
                      :aot :all
                      :main foo.server
                      :sass {:style :compressed}
-                     :cljs {:optimizations :advanced} ;; could be defaul to be overridden
+                     :cljs {:optimizations :advanced} ;; could be default to be overridden
                      }}
  ```
