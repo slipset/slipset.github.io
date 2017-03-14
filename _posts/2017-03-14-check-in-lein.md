@@ -123,7 +123,7 @@ Of course, I'm only complaining and have no real solution to this problem, but I
                      :prep-tasks ["git-info-edn" "compile" ["with-profile" "uberjar" "cljsbuild" "once"]]
                      :omit-source true
                      :aot :all
-                     :main com.comoyo.analytics.dashboard.server
+                     :main foo.server
                      :sass {:style :compressed}
                      :cljs {:optimizations :advanced} ;; could be defaul to be overridden
                      }}
