@@ -99,7 +99,7 @@ Of course, I'm only complaining and have no real solution to this problem, but I
  :plugins [[lein-figwheel "0.5.8"]
  ```
  and that all magic with sidecars and piggiebackers would be taken care of, as would picking up of externs and stuff which 
- I would have to place in some directory dictated by `fighweel/cljsbuild`
+ I would have to place in some directory dictated by `figwheel/cljsbuild`
  
  So, rewriting my `project.clj` above, I'd like to see something like:
  ```clojure
