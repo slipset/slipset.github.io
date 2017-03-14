@@ -37,7 +37,7 @@ I'd rather have Clojurescript/figwheel build with a simple setup. and not
                    :cljsbuild {:builds {:dev
                                         {:source-paths
                                          ["env/dev/cljs/foo"
-                                          "src/cljs/foo
+                                          "src/cljs/foo"
                                           "test/cljs"]
                                          :compiler {:preloads [devtools.preload]}}}}}
              :test {:plugins [;; Runs cljs-tests in various browsers
