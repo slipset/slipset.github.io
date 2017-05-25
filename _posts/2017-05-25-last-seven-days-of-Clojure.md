@@ -54,7 +54,7 @@ regressions don't happen while iplementing
 This issue, slated for 1.9 states that "Currently one can't send vars around in edn" The proposal is to use `#clojure.var` for a tag.
 Alex has added a patch so people can start playing with this to see if (or how) it might break existing code.
 
-The patch adds a new dynamic var `*print-var-tag*:
+The patch adds a new dynamic var `*print-var-tag*`:
 
 > When set to logical true, vars will be printed with the #clojure/var
 > tagged literal, otherwise vars print with the #' reader macro.
@@ -67,14 +67,14 @@ unconditionally.
 ## Case fails when a single single clause with an empty test seq is used
 
 Chris Bloom reports
+
 > I would expect
 ```clojure
 (case 1 
    () :a
    :none)
 ```   
-> to return `:none` instead if tails with an univormative exception: "Unhandled clojure.lang.ArityException: Wrong number of args (-2) passed to: core/max"
-
+> to return `:none` instead if tails with an uniformative exception: "Unhandled clojure.lang.ArityException: Wrong number of args (-2) passed to: core/max"
 ```clojure
  (case 1 
     () :a) 
