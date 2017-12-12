@@ -21,4 +21,4 @@ return reagent.core.render.call(null,new cljs.core.PersistentVector(null, 1, 5, 
 });
 snake_game.core.run.call(null);
 
-//# sourceMappingURL=core.js.map?rel=1513110307615
+//# sourceMappingURL=core.js.map?rel=1513111482115

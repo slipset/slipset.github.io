@@ -12,20 +12,9 @@
                              start-spill
                              oppdater-spill]]))
 
-(def piltast-til-retning
-  {38 [0 -1]
-   40 [0 1]
-   39 [1 0]
-   37 [-1 0]})
-
 (register-handler :initialize start-spill) 
 (register-handler :oppdater-spill oppdater-spill)
 
-;;Register global event listener for keydown event.
-;;Processes key strokes according to `utils/key-code->move` mapping
-
-
-;; ---- Subscription Handlers ----
 
 (register-sub
  :brett
@@ -45,10 +34,10 @@
    (reaction (:kropp (:slange @db)))))
 
 (register-sub
- :poeng
+ :skritt
  (fn
    [db _]
-   (reaction (:poeng @db))))
+   (reaction (:skritt @db))))
 
 (register-sub
  :er-spillet-igang?

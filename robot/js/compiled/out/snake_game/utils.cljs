@@ -43,7 +43,7 @@
                            [3 5]
                            [4 6] [5 6]
                            [0 7] [4 7] [6 7]} #_(finn-tilfeldige-ledige-plasser-på-brettet 5 slange brett)
-                 :poeng 0
+                 :skritt 0
                  :er-spillet-igang? true})
 
 (defn er-det-en-kollisjon? [{:keys [brett hindre slange]} ]
@@ -113,11 +113,15 @@
     (endre-retning spill [nil (til-høyre (:retning slange))])
     spill))
 
+(defn oppdater-skritt [spill]
+  (endre-i spill [:skritt] inc))
+
 (defn neste-steg [{:keys [slange brett] :as spill}]
   (if (er-det-en-kollisjon? spill)
     (avslutt spill)
     (-> spill
         (flytt-slangen)
+        (oppdater-skritt)
         (kanskje-endre-retning))))
 
 

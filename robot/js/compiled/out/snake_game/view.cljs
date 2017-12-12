@@ -36,17 +36,17 @@
          [:div.play {:on-click #(dispatch [:initialize])}
           [:h1 "↺" ]]]))))
 
-(defn poeng
-  "Renders player's poeng"
+(defn skritt
+  "Renders player's skritt"
   []
-  (let [poeng (subscribe [:poeng])]
+  (let [skritt (subscribe [:skritt])]
     (fn []
-      [:div.poeng (str "Poeng: " @poeng)])))
+      [:div.poeng (str "Skritt: " @skritt)])))
 
 (defn game
   "The main rendering function"
   []
   [:div
    [game-over]
-#_   [poeng]
+   [skritt]
    [render-brett]])
