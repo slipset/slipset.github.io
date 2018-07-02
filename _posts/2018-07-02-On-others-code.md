@@ -39,9 +39,9 @@ Now this code is somewhat logic free, and it's up to the caller to check if we'r
 client certs and make the cast. Still not happy with it though, but I can't really put 
 my finger on what bugs me.
 
-For the second eample, my biggest problem is that, at least the last time I programmed Java, 
+For the second example, my biggest problem is that, at least the last time I programmed Java, 
 you needed a mock for `HttpServletRequest` to set values on it. And I really dislike mocks.
-Therefor, I'd like to rewrite it as
+Therefore, I'd like to rewrite it as
 
 ```java
 private boolean isValidRequest(String method, String pathInfo) {
@@ -49,8 +49,11 @@ private boolean isValidRequest(String method, String pathInfo) {
     return pathInfo != null && validPaths.stream().anyMatch(pathInfo::startsWith);
 }
 ```
-Now this method has two `String` arguments, not to happy about that either. Guess the `method` should have been
-an `Enum`. Also not overly enthused about The whole `Configuration` bit. I guess I would have rewritten to 
+Now this method has two `String` arguments, not to happy about that either. 
+
+Guess the `method` should have been an `Enum`. 
+
+Also not overly enthused about the whole `Configuration` bit. I guess I would have rewritten to 
 `Configuration.validPaths(method);`, which would leave us with:
 
 ```java
@@ -60,7 +63,7 @@ private boolean isValidRequest(HttpMethod method, String pathInfo) {
 }
 ```
 
-Which,in which you could let the caller do the `validPaths` thingy, so it ends up around
+Which, in which you could let the caller do the `validPaths` thingy, so it ends up around
 
 ```java
 private boolean isValidRequest(List<String> validPaths, String pathInfo) {
