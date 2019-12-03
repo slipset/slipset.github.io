@@ -39,6 +39,6 @@ I need to read the documentation, blablabla.<br>How&#39;s your day going?
 Which simply makes me want to say, hang in there Christin! You are the one who knows what what you're talking about!
 
 And for the rest of you, if you're ever in need of a speaker at your conference, or a strong voice in your panel, 
-you know whoo to contact.
+you know who to contact.
 
 
