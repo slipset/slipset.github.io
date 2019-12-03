@@ -36,7 +36,7 @@ I need to read the documentation, blablabla.<br>How&#39;s your day going?
 <a href="https://twitter.com/ChristinGorman/status/1201866960172134400?ref_src=twsrc%5Etfw">December 3, 2019</a>
 </blockquote>
 
-Which simply makes me want to say, hang in there Christin! You are the one who knows what what you're talking about!
+Which simply makes me want to say, hang in there Christin! You are the one who knows what you're talking about!
 
 And for the rest of you, if you're ever in need of a speaker at your conference, or a strong voice in your panel, 
 you know who to contact.
