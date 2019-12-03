@@ -19,7 +19,7 @@ and watching the talk I was reminded of what a great speaker Christin is, in my 
 
 But as you'll see from the talk, she is not only a great speaker, she also has strong opinions, many of which she expresses
 in her blog over [here](https://qristin.wordpress.com) (mainly in Norwegian, where her focus lately has been the ridiculous
-amount of money that the public sector in Norway is throwing after large consultancy running monster projects which we know
+amount of money that the public sector in Norway is throwing after large consultancies running monster projects which we know
 are doomed to fail even before they're started.
 
 So as I was watching the video I linked to over, I was thinking, maybe todays Advent of Parens post should be a post
