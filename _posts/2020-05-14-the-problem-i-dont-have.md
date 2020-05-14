@@ -86,7 +86,7 @@ because, in order to produce this json, we're forced to jump through a whole bun
 Firstly, we have data literals, so the above json is almost valid Clojure, we just need to remove the colons:
 ```clojure
 (def paid-cart {"_state" "paid",
-                "paidItems": [{"id" "1bcd",
+                "paidItems" [{"id" "1bcd",
                                "title" "gizmo"},
                               {"id"  "3cdf",
                                "title" "widget",
