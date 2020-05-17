@@ -1,5 +1,5 @@
-In my [previous](https://slipset.github.io/posts/the-problem-i-dont-have) I contrasted two different ways of approaching 
-JSON (de)serialization. In [this](https://purelyfunctional.tv/issues/purelyfunctional-tv-newsletter-364-tip-seek-the-model-and-enshrine-it-in-code/) Eric Normand
+In my [previous](https://slipset.github.io/posts/the-problem-i-dont-have) post I contrasted two different ways of approaching 
+JSON (de)serialization. In [this](https://purelyfunctional.tv/issues/purelyfunctional-tv-newsletter-364-tip-seek-the-model-and-enshrine-it-in-code/) post [Eric Normand](https://twitter.com/ericnormand)
 discusses different ways of doing CSV parsers. Basically, these are two posts are about the same thing. It's about where you draw the line.
 I think that in [Einars](https://twitter.com/einarwh) words, you'd say that it's about drawing the line between the bounded and the unbounded problem.
 
