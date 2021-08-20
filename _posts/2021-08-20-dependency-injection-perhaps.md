@@ -13,7 +13,7 @@ From the github repo, we can read that
 To me, the keywords here are lifecycle, dependencies, and runtime state. So a Component is a thing that has runtime state, an example of this would be a database-connection, it has a need for lifecycle managament, ie it needs to be started (eg open a connection to the database), and it needs to be stopped (eg close the connection to the database. It might also be dependent on other services being started, so Component makes sure your components are started in the correct order, and also stopped in the correct order. All this is good.
 
 # Component at Ardoq
-So when I started working at Ardoq, our codebase comprised 43 such components in a codebase of some 20KLOC. So in a codebase of 20KLOC, we had 43 components which were carrying runtime state, were in need of lifecycle management, and had intricate dependency management? Looking this doesn't quite make sense. Today, we're at 116 Components at 58KLOC. One could argue that that's a bit too much.
+So when I started working at Ardoq, our codebase comprised 43 such components in a codebase of some 20KLOC. So in a codebase of 20KLOC, we had 43 components which were carrying runtime state, were in need of lifecycle management, and had intricate dependency management? Today, we're at 116 Components at 58KLOC. One could argue that that's a bit too much.
 
 # Another use of Component
 There is another problem that could be solved with Component, and I think this is a clue to why we have so many of them. It's hinted at above, but let's spell it out. It's about dependencies, and more specifically, about hiding implementation details and building bigger building blocs. So, let's look at some code:
