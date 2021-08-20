@@ -22,6 +22,7 @@ There is another problem that could be solved with Component, and I think this i
 (defn handle-some-request [{:keys [system params] :as req}] 
    (some-service/do-whatever system params))
 ```
+
 The above code is great, and teribble, both because we don't know what sideffects `some-service/do-whatever` is going to execute. It's good, because we don't have to enumerate all (and thus know, and remember to add a new one when `do-whatever` needs to do more) of the services `do-whatever` need to have available to do it's job. One could even imagine that `do-whatever` called into other services which then called into yet other services. It's also terrible, because `do-whatever` can do everything our system has to offer, so it's hard to reason about our code. Would the above code send emails? Possibly. Launch missiles? Also possible.
 
 Basically what this offers us is some sort of encapsulation. When Ardoq was initially developed, this was more or less how the code looked, but at the time of my arrival, the code base had changed into this pattern:
@@ -30,6 +31,7 @@ Basically what this offers us is some sort of encapsulation. When Ardoq was init
 (defn handle-some-request [{:keys [system params] :as req}] 
    (some-service/do-whatever (:some-service system) params))
 ```
+
 Which meant that `do-whatever` only had access to a subset of the system, so it would be easier to reason about what `do-whatever` was doing, or at least what it was not capable of doing. In a way this is nice, because, we now have restricted what `do-whatever` can do, while we still don't have to know or care about (at this call site)  what it or its dependencies need to have available to them in order to to their job. Encapsulation is achieved.
 
 # The problem
