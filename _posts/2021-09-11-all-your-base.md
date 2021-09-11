@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Dependency injection, perhaps? Part 3"
-date:   2021-08-20
+date:   2021-09-11
 categories: Design
 ---
 
