@@ -36,8 +36,8 @@ If we examine closer what these dao-functions looked like, they were all quite s
 
 I'm digression (again), but as the observant reader will already have seen, there are two interesting bits that vary between these two fns
 
-1) How many things you expect to get back (one vs many)
-2) The query
+1. How many things you expect to get back (one vs many)
+2. The query
 
 So if you can handle the isolation of the database impl in other ways, you can separate these things:
 
@@ -51,15 +51,15 @@ So if you can handle the isolation of the database impl in other ways, you can s
 
 Now, there are several upsides to doing it this way
 
-1) Your queries, which is the stuff that tends to grow in complexity, become pure functions which return data, so they're actually unit-testable.
-2) You can now _combine_ queries, in our case with `merge`:
+1. Your queries, which is the stuff that tends to grow in complexity, become pure functions which return data, so they're actually unit-testable.
+2. You can now _combine_ queries, in our case with `merge`:
 ```clj
 (defn by-id-and-name [id name]
   (merge (by-id id) (by-name name)))
 ```
-3) You can reduce the number of side-effecting query-functions in your code base to two:
-    1) `query-one!`
-    2) `query!`
+3. You can reduce the number of side-effecting query-functions in your code base to two:
+    1. `query-one!`
+    2. `query!`
    
    while still hiding the implementation details of your chosen database.
 
@@ -83,12 +83,12 @@ the `foo-repo/config` holds some data which are important for us, such as collec
 
 So, what does this give us?
 
-1) I know at a glance that a fn that only calls  `repo/query!` does not mutate data, nor does it send out emails or launch missiles, whereas a function which called `(foo-store/find-by-name! foo-store "a name")` could do whatever, I'd have to look into the definition of our `System` to understand the capabilities of the `foo-store` Component.
-2) By convention I know that any fn that only takes a `ctx` and some other _non scary_ parameters, only reads the database:
+1. I know at a glance that a fn that only calls  `repo/query!` does not mutate data, nor does it send out emails or launch missiles, whereas a function which called `(foo-store/find-by-name! foo-store "a name")` could do whatever, I'd have to look into the definition of our `System` to understand the capabilities of the `foo-store` Component.
+2. By convention I know that any fn that only takes a `ctx` and some other _non scary_ parameters, only reads the database:
 ```clj
 (some-ns/do-whatever ctx arg1 arg2)
 ```
 is a read only fn and doesn't perform other sideffects than reading from the database
-3) We still have isolated the implementation detail that is our database vendor. 
+3. We still have isolated the implementation detail that is our database vendor. 
 
 What has not been mentioned here is how we mutate the database. I guess that will be the next post.
