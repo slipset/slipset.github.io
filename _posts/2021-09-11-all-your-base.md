@@ -9,29 +9,29 @@ Ardoq is a multi-tenant SaaS application. This means that we have, well, multipl
 
 So, in this series on dependency injection, the interesting question how do we make the database available to the code that handles the request.
 
-When I arrived at Ardoq, the communication with the database was organized around the [DAO](https://en.wikipedia.org/wiki/Data_access_object) pattern. So for every entity in our system, we had a corresponding DAO. The dao was implemented as such:
+When I arrived at Ardoq, the communication with the database was organized around the [DAO](https://en.wikipedia.org/wiki/Data_access_object) pattern. The dao was implemented as such:
 
 ```clj
 (ns ardoq.persistence.foo-store ...)
 
-(defn find-by-id [foo-store id]
+(defn find-by-id [system id]
    ...)
 ```
 
-Each entity in the system had its corresponding ns, and its corresponding Component
+Each entity in the system had its corresponding ns, and its corresponding Component. We will get back to why this was a Component when we look at how mutating the database was being done.
 
 Which to some extent is great, because, say you wanted to swap database, you only need to change your DAO layer, at least in theory. But that's a digression we might get back to in some other post.
 
-It's also not so great because this creates a proliferation of Components which serve no other purpose than to convey the organization database.
+It's also not so great because this creates a proliferation of Components which serve no other purpose than to convey the organization database. And it makes it harder to reason about the code, because, in order to understand what `(find-by-id system id)` is _capable_ of doing, you need to read the code of `find-by-id`
 
 If we examine closer what these dao-functions looked like, they were all quite similar (focussing on query here):
 
 ```clj
-(defn find-by-id [foo-store id]
-   (mc/find-one-as-map (:org-db foo-store) "foo" {:_id (ObjectId. id)}))
+(defn find-by-id [system id]
+   (mc/find-one-as-map (:org-db system) "foo" {:_id (ObjectId. id)}))
    
-(defn find-by-name [foo-store name]
-   (mc/find-maps (:org-db foo-store) "foo" {:name "name"}))
+(defn find-by-name [system name]
+   (mc/find-maps (:org-db system) "foo" {:name "name"}))
 ``` 
 
 I'm digression (again), but as the observant reader will already have seen, there are two interesting bits that vary between these two fns
@@ -57,7 +57,7 @@ Now, there are several upsides to doing it this way
 (defn by-id-and-name [id name]
   (merge (by-id id) (by-name name)))
 ```
-3. You can reduce the number of side-effecting query-functions in your code base to two:
+3. You can reduce the number of side-effecting datababase-hiding query-functions in your code base to two:
     1. `query-one!`
     2. `query!`
    
@@ -65,7 +65,7 @@ Now, there are several upsides to doing it this way
 
 But, this series is not about hiding implementation details about your database, it's about how to reduce Components in your system.
 
-So, no matter how you choose to do this, you need to at some point give the function which interacts with a database a handle to that database. Previously we did it by `assoc`ing the org-database to the `system`, what are we doing now?
+So, no matter how you choose to do this, you need to at some point give the function which interacts with the database a handle to that database. Previously we did it by `assoc`ing the org-database to the `system`, what are we doing now?
 
 The insight, which of course is not very novel, is that every request runs in some sort of _context_. In our case, it's in the context of a user and an org, so we have this simple function which is `req->context` which takes a request and returns us a context containing the org-db and the running user.
 
@@ -83,7 +83,7 @@ the `foo-repo/config` holds some data which are important for us, such as collec
 
 So, what does this give us?
 
-1. I know at a glance that a fn that only calls  `repo/query!` does not mutate data, nor does it send out emails or launch missiles, whereas a function which called `(foo-store/find-by-name! foo-store "a name")` could do whatever, I'd have to look into the definition of our `System` to understand the capabilities of the `foo-store` Component.
+1. I know at a glance that a fn that only calls `repo/query!` does not mutate data, nor does it send out emails or launch missiles, whereas a function which called `(foo-store/find-by-name! system "a name")` could do whatever, I'd have to read the source of `find-by-id` to figure out exactly what it does. In most cases it would do what you'd expect, in rare cases, it might launch missiles.
 2. By convention I know that any fn that only takes a `ctx` and some other _non scary_ parameters, only reads the database:
 ```clj
 (some-ns/do-whatever ctx arg1 arg2)
