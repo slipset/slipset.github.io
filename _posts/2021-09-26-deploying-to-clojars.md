@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Deploying to Clojars"
-date:   2021-09-11
+date:   2021-09-26
 categories: deployment, clojure
 ---
 As one of the maintainers of the various repos over at [clj-commons](https://github.com/clj-commons), it's often on me to deploy new versions of the libraries to [clojars](https://www.clojars.org). This used to be a pain, as deploying libs tended to include a bunch of manual steps. Also, even though almost nobody cares, I tend to sign the artefacts, which meant (since gpg has a rather unique user experience) that I only had one computer I could do the deployment from. Also, as time has progressed, my computers don't neccesarily have jdk-8 installed, but it's nice to build and test the libs against that version, since it's what Clojure runs on. So the pain-points were many, but there is also something very unhygenic about this process. It's manual, it's hard for other maintainers to deploy libs, and most of all, the artefacts were built on _my compouter_, in a somewhat unrepeatable process. Also, it meant that each maintainer who wanted to deploy to Clojars needed to be a member of the clj-commons clojars org, and had set up gpg for signing artefacts. Also, I tended to forget to tag releases.
