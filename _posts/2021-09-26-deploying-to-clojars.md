@@ -83,7 +83,7 @@ Now we need to ensure that `lein` will accept those, and we do that by adding so
 In the linked code, I have `sign-releases true` but that needs to be discussed in another post.
 
 # Final words
-With the above setup, anyone who is allowed to push to `master` on the project is also allowed to deploy a new version to clojars. The artefact will be built on CircleCI, and we have full transparency of who did it, when they did it and on what commit it was done. Further more, we ensure that we always have a release-commit, which is important for some people, especially maintainers of linux-distros which use the [tar-balls](https://github.com/clj-commons/clj-yaml/releases) that Github create automagically for us.
+With the above setup, anyone who is allowed to push to `master` on the project and is member of the clj-commons organization (only org-members have access to the `CONTEXT`) is also allowed to deploy a new version to clojars. The artefact will be built on CircleCI, and we have full transparency of who did it, when they did it and on what commit it was done. Further more, we ensure that we always have a release-commit, which is important for some people, especially maintainers of linux-distros which use the [tar-balls](https://github.com/clj-commons/clj-yaml/releases) that Github create automagically for us.
 
 
 
