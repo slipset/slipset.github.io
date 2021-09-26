@@ -4,11 +4,11 @@ As one of the maintainers of the various repos over at [clj-commons](https://git
 What I wanted to achieve was to remove all of my personal pain points, I wanted to make it easy for other maintainters to deploy to Clojars, and I wanted to make sure we had repeatable and transparent builds.
 
 To me this would be a process that did the following:
-1) Ensure that the artefact was built with the correct jdk
-2) Ensure that what was built on Circle was what was deployed to Clojars
-3) Ensure that every release was tagged appropriatly
-4) Ensure that every release was signed
-5) Ensure that a release could be done from wherever on whatever machine
+1. Ensure that the artefact was built with the correct jdk
+2. Ensure that what was built on Circle was what was deployed to Clojars
+3. Ensure that every release was tagged appropriatly
+4. Ensure that every release was signed
+5. Ensure that a release could be done from wherever on whatever machine
 
 Ideally, what would happen is that when you're ready to do a release, you do _something_, and Circle takes care of the rest.
 
@@ -56,9 +56,9 @@ workflows:
             - CLOJARS_DEPLOY
 ```
 Three things to notice:
-1) I think, but could be wrong, that we need to have filters on all jobs if we have it on one job. and so for our `build` job, we have a very permissive filter
-2) On the `deploy` job, we have a filter which says that it's only to be run when we have a tag that matches our release-tag. 
-3) The [`context`](https://circleci.com/docs/2.0/contexts/) This is where we store the secrets we need to be able to deploy to Clojars.
+1. I think, but could be wrong, that we need to have filters on all jobs if we have it on one job. and so for our `build` job, we have a very permissive filter
+2. On the `deploy` job, we have a filter which says that it's only to be run when we have a tag that matches our release-tag. 
+3. The [`context`](https://circleci.com/docs/2.0/contexts/) This is where we store the secrets we need to be able to deploy to Clojars.
 
 Now for the actual deploy-job, I won't go through the whole [thing](https://github.com/clj-commons/clj-yaml/blob/master/.circleci/config.yml), but I'll run through the most important bits. I have a [babashka](https://github.com/babashka/babashka) script over [here](https://github.com/clj-commons/infra/blob/main/deployment/circle-maybe-deploy.bb) which takes a tag on the form `Release-1.2.4` and simply strips it to `1.2.3` and injects that into the environment under `PROJECT_VERSION` before running a command.
 
