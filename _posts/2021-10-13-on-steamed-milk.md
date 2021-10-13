@@ -19,7 +19,7 @@ The third part is the amount of milk. Everything from an [caffè macchiato](http
 So, what do I prefer? I really like the taste of the espresso, so I'm partial to less milk, and more coffee, and as such, a cortado is preferable. But I also prefer the foaminess more on the side of a cappuccino, but not so much that it doesn't mix with the coffee. This leads to me often ordering something like "a cortado, but the milk being steamed like a cappuccino, full fat of course". Oh, and it needs to be served in a cup, not a glass, but preferably in a bowl.
 Which should look something like this:
 ![IMG_0446](https://user-images.githubusercontent.com/5894926/137164571-eae3424e-2029-46fe-901c-cba633685071.jpg)
-Note, that the leaf is not strictly neccessary, but to me, when the milk is perfectly steamed when you're able to make them.
+Note, that the leaf is not strictly neccessary, but to me, it's only when the milk is perfectly steamed that you're able to make them.
 
 At [Kaffebrenneriet](https://www.kaffebrenneriet.no) this would be a triple-au-lait.
 
