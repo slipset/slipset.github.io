@@ -66,7 +66,7 @@ Three things to notice:
 2. On the `deploy` job, we have a filter which says that it's only to be run when we have a tag that matches our release-tag. 
 3. The [`context`](https://circleci.com/docs/2.0/contexts/) This is where we store the secrets we need to be able to deploy to Clojars.
 
-Now for the actual deploy-job, I won't go through the whole [thing](https://github.com/clj-commons/clj-yaml/blob/master/.circleci/config.yml), but I'll run through the most important bits. I have a [babashka](https://github.com/babashka/babashka) script over [here](https://github.com/clj-commons/infra/blob/main/deployment/circle-maybe-deploy.bb) which takes a tag on the form `Release-1.2.4` and simply strips it to `1.2.3` and injects that into the environment under `PROJECT_VERSION` before running a command.
+Now for the actual deploy-job, I won't go through the whole [thing](https://github.com/clj-commons/clj-yaml/blob/master/.circleci/config.yml), but I'll run through the most important bits. I have a [babashka](https://github.com/babashka/babashka) script over [here](https://github.com/clj-commons/infra/blob/main/deployment/circle-maybe-deploy.bb) which takes a tag on the form `Release-1.2.3` and simply strips it to `1.2.3` and injects that into the environment under `PROJECT_VERSION` before running a command.
 
 We see this being run [here](https://github.com/clj-commons/clj-yaml/blob/master/.circleci/config.yml#L127) with some GPG stuff removed for clarity:
 ```YAML
