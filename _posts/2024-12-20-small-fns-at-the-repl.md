@@ -13,13 +13,17 @@ Finally, I asked for a `persist!` function, which takes a database connection an
 
 What I think is really cool about this approach is that you can test all the functions (perhaps except for persist!, but that one should be free of difficult logic) without corrupting data, and you can verify it on an individual object level before applying it to all the objects.
 
-I think that, in the Java world, it would have been more natural to write a `public static void fix-error(Database db) {… }` that does everything or nothing.
+I think that, in the Java world, it would have been more natural to write a 
+```java
+public static void fix-error(Database db) {… }
+```
+ that does everything or nothing.
 
 So what does this have to do with category theory? Well, in category theory, you give names to structures made up of objects, operations on them, and “laws.” It could have been cool to tell Sophie that we were now going to create an “error-fixer structure,” and that she would then know she had to deliver a predicate, a mapper, and that there was a relationship between the predicate and the mapper.
 
 And, how did the clojure version of the `public static void fixErrors` function turn out?
 Rather simple I'd say.
 ```clj
-(doseq [dings (map fix-error (filter has-error? things))] (persister! db thing))
+(doseq [thing (map fix-error (filter has-error? things))] (persister! db thing))
 ```
 
